@@ -1,22 +1,27 @@
 package toyota.car;
 
 import toyota.car.details.*;
+import toyota.factory.Country;
+
+import java.util.Arrays;
 
 public abstract class Car {
-    private String color;
-    private int maxSpeed;
-    private TransmissionType transmission;
-    private boolean isMove;
-    private double price;
+    protected String color;
+    protected int maxSpeed;
+    protected TransmissionType transmission;
+    protected boolean isMove;
+    protected double price;
 
-    private GasTank gasTank;
-    private Engine engine;
-    private Electrics electrics;
-    private HeadLigths headLigths;
-    private Wheel[] wheels;
+    protected GasTank gasTank;
+    protected Engine engine;
+    protected Electrics electrics;
+    protected HeadLigths headLigths;
+    protected Wheel[] wheels;
+    protected Country country;
 
     public Car(String color, int maxSpeed, TransmissionType transmission, boolean isMove, double price,
-               GasTank gasTank, Engine engine, Electrics electrics, HeadLigths headLigths, Wheel[] wheels) {
+               GasTank gasTank, Engine engine, Electrics electrics, HeadLigths headLigths, Wheel[] wheels,
+               Country country) {
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.transmission = transmission;
@@ -27,6 +32,7 @@ public abstract class Car {
         this.electrics = electrics;
         this.headLigths = headLigths;
         this.wheels = wheels;
+        this.country = country;
     }
 
     public void start() throws StartCarException {
@@ -92,5 +98,22 @@ public abstract class Car {
 
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "color='" + color + '\'' +
+                ", maxSpeed=" + maxSpeed +
+                ", transmission=" + transmission +
+                ", isMove=" + isMove +
+                ", price=" + price +
+                ", gasTank=" + gasTank +
+                ", engine=" + engine +
+                ", electrics=" + electrics +
+                ", headLigths=" + headLigths +
+                ", wheels=" + Arrays.toString(wheels) +
+                ", country=" + country +
+                '}';
     }
 }

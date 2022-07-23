@@ -40,7 +40,7 @@ public class AssemblyCar {
         Usb usb = detailsFactory.createUsb();
 
         return new Camry(color, 250, TransmissionType.AUTOMATIC, false, price, gasTank, engine,
-                electrics, headLights, wheels, false, usb);
+                electrics, headLights, wheels, false, usb, country);
     }
 
     public Solara createSolara(String color, double price) {
@@ -53,7 +53,7 @@ public class AssemblyCar {
         MiniFrigde miniFridge = detailsFactory.createMiniFridge();
 
         return new Solara(color, 300, TransmissionType.AUTOMATIC, false, price, gasTank, engine,
-                electrics, headLights, wheels, false, miniFridge);
+                electrics, headLights, wheels, false, miniFridge, country);
     }
 
     public Dyna createDyna(String color, double price) {
@@ -66,7 +66,7 @@ public class AssemblyCar {
         Socket socket = new Socket();
 
         return new Dyna(color, 100, TransmissionType.MECHANIC, false, price, gasTank, engine,
-                electrics, headLights, wheels, 1000,  socket);
+                electrics, headLights, wheels, 1000,  socket, country);
     }
 
     public Hiance createHiance(String color, double price) {
@@ -79,7 +79,7 @@ public class AssemblyCar {
         Wheel safeWheel = detailsFactory.createSafeWheel(WheelRadius.R20);
 
         return new Hiance(color, 100, TransmissionType.MECHANIC, false, price, gasTank, engine,
-                electrics, headLights, wheels, 1200, safeWheel);
+                electrics, headLights, wheels, 1200, safeWheel, country);
     }
 
 }
